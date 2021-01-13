@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="8dp"
+    android:foreground="?attr/selectableItemBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/guestBarcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="bwoudbI70as"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/guestName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            tools:text="Agus"
+            android:textSize="20sp"
+            android:layout_below="@id/guestBarcode"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="50"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_alignParentEnd="true"
+            android:textSize="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
