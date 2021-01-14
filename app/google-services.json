@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "537359042465",
+    "firebase_url": "https://doesapp-eb7e0.firebaseio.com",
+    "project_id": "doesapp-eb7e0",
+    "storage_bucket": "doesapp-eb7e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537359042465:android:271536895257065fc8ede0",
+        "android_client_info": {
+          "package_name": "com.masuwes.aplikasiundangan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537359042465-jhpkrksjm8ia5t470fva5bv1n5i1dg69.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFgqnaNnbOKoEb4R_4lUuoI1XdT0DeQSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537359042465-jhpkrksjm8ia5t470fva5bv1n5i1dg69.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537359042465:android:4546bd82611ae73dc8ede0",
+        "android_client_info": {
+          "package_name": "com.masuwes.doesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537359042465-jhpkrksjm8ia5t470fva5bv1n5i1dg69.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFgqnaNnbOKoEb4R_4lUuoI1XdT0DeQSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537359042465-jhpkrksjm8ia5t470fva5bv1n5i1dg69.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537359042465:android:4e5de5f7e96f2f22c8ede0",
+        "android_client_info": {
+          "package_name": "com.masuwes.tugasfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537359042465-jhpkrksjm8ia5t470fva5bv1n5i1dg69.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFgqnaNnbOKoEb4R_4lUuoI1XdT0DeQSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537359042465-jhpkrksjm8ia5t470fva5bv1n5i1dg69.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

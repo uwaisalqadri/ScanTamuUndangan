@@ -1,6 +1,16 @@
 package com.masuwes.aplikasiundangan.utils
 
+import android.content.Context
+import android.widget.Toast
+
 object Constants {
-    // room
-    var DATABASE_NAME = "guests_database"
+    val GUEST_TABLE = "Guest"
+}
+
+fun String.showToast(context: Context) {
+    Toast.makeText(
+        context,
+        this,
+        Toast.LENGTH_SHORT
+    ).show()
 }
