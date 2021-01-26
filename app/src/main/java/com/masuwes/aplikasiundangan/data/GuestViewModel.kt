@@ -22,7 +22,7 @@ class GuestViewModel : ViewModel() {
         couponListData.postValue(handleCouponList(response))
     }
 
-    fun postCouponCheck(coupon: Float) = viewModelScope.launch {
+    fun postCouponCheck(coupon: String) = viewModelScope.launch {
         checkCouponData.postValue(Resource.Loading())
         val response = guestRepository.postCouponCheck(coupon)
         checkCouponData.postValue(handleCheckCoupon(response))

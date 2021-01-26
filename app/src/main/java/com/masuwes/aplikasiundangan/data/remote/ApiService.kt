@@ -16,6 +16,6 @@ interface ApiService {
     @FormUrlEncoded
     @POST("api/coupon/check")
     suspend fun postCouponCheck(
-        @Field("coupon") coupon: Float
+        @Field("coupon") coupon: String
     ) : Response<CheckCouponResponse>
 }

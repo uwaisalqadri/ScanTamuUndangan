@@ -14,12 +14,15 @@ import com.masuwes.aplikasiundangan.data.GuestViewModel
 import com.masuwes.aplikasiundangan.databinding.ActivityMainBinding
 import com.masuwes.aplikasiundangan.utils.Resource
 import com.masuwes.aplikasiundangan.utils.showToast
+import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var guestAdapter: GuestAdapter
     private val viewModel: GuestViewModel by viewModels()
+
+    lateinit var id: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,16 +31,26 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.getCouponList()
 
+        binding.btnCheckCoupon.setOnClickListener {
+            viewModel.postCouponCheck(id)
+        }
+
         viewModel.checkCouponData.observe(this, Observer { check ->
-            when(check) {
+            when (check) {
                 is Resource.Success -> {
                     binding.apply {
                         btnCheckCoupon.text = "Check"
                         postProgress.isVisible = false
                     }
-                    "Coupon Berhasil Dicek".showToast(this)
                     check.data?.let { result ->
-                        binding.edtGuestName.setText(result.name)
+                        when (result.success) {
+                            true -> {
+                                "Coupon Berhasil Dicek".showToast(this)
+                            }
+                            false -> {
+                                "Coupon Tidak Terdaftar".showToast(this)
+                            }
+                        }
                     }
                 }
 
@@ -53,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                         btnCheckCoupon.text = "Check"
                         postProgress.isVisible = false
                     }
-                    "Coupon Tidak ditemukan".showToast(this)
+                    "Gagal Menyambungkan ke server".showToast(this)
                 }
             }
         })
@@ -79,7 +92,8 @@ class MainActivity : AppCompatActivity() {
                 if (result.contents == null) {
                     "Barcode Tidak terdeteksi".showToast(this)
                 } else {
-                    viewModel.postCouponCheck(result.contents.toFloat())
+                    id = result.contents
+                    binding.edtGuestName.setText(id)
                 }
             } else {
                 super.onActivityResult(requestCode, resultCode, data)
