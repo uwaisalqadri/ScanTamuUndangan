@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
@@ -22,8 +23,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var guestAdapter: GuestAdapter
     private val viewModel: GuestViewModel by viewModels()
 
-    lateinit var id: String
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -32,7 +31,9 @@ class MainActivity : AppCompatActivity() {
         viewModel.getCouponList()
 
         binding.btnCheckCoupon.setOnClickListener {
-            viewModel.postCouponCheck(id)
+            val coupon = binding.edtGuestName.text.toString()
+            viewModel.postCouponCheck(coupon)
+            Log.d("EditText", "$coupon")
         }
 
         viewModel.checkCouponData.observe(this, Observer { check ->
@@ -45,7 +46,9 @@ class MainActivity : AppCompatActivity() {
                     check.data?.let { result ->
                         when (result.success) {
                             true -> {
+                                viewModel.getCouponList()
                                 "Coupon Berhasil Dicek".showToast(this)
+                                "Kupon ${result.name} Berhasil Ditukarkan".showToast(this)
                             }
                             false -> {
                                 "Coupon Tidak Terdaftar".showToast(this)
@@ -92,8 +95,7 @@ class MainActivity : AppCompatActivity() {
                 if (result.contents == null) {
                     "Barcode Tidak terdeteksi".showToast(this)
                 } else {
-                    id = result.contents
-                    binding.edtGuestName.setText(id)
+                    binding.edtGuestName.setText(result.contents)
                 }
             } else {
                 super.onActivityResult(requestCode, resultCode, data)

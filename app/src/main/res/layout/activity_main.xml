@@ -24,7 +24,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:hint="Nama"
+        android:hint="Kode"
         android:textColorHint="@android:color/black"
         app:layout_constraintBottom_toBottomOf="@+id/buttonScanNow"
         app:layout_constraintEnd_toEndOf="parent"
