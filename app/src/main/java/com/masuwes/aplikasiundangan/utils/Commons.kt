@@ -4,7 +4,8 @@ import android.content.Context
 import android.widget.Toast
 
 object Constants {
-    val GUEST_TABLE = "Guest"
+    const val GUEST_TABLE = "Guest"
+    const val BASE_URL = "https://internal.wedding.indi.id/"
 }
 
 fun String.showToast(context: Context) {

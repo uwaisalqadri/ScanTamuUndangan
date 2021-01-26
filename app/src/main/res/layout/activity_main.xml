@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".ui.MainActivity">
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    <Button
         android:id="@+id/buttonScanNow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,24 +15,40 @@
         android:text="Scan Now"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        app:icon="@drawable/ic_add"
-        app:iconTint="@color/white"
-        android:layout_margin="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/tvScanResult"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Result"
-        android:textColor="@android:color/black"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:hint="Nama"
+        android:textColorHint="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonScanNow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonScanNow"
+        app:layout_constraintTop_toTopOf="@+id/buttonScanNow">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtGuestName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvGuest"
@@ -40,7 +57,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvScanResult"
+        app:layout_constraintTop_toBottomOf="@+id/button"
         tools:listitem="@layout/guest_list_item" />
 
 
