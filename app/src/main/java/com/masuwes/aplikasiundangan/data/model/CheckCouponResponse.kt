@@ -2,5 +2,6 @@ package com.masuwes.aplikasiundangan.data.model
 
 data class CheckCouponResponse(
     val message: String,
-    val success: Boolean
+    val success: Boolean,
+    val name: String
 )

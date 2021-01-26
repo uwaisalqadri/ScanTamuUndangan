@@ -6,5 +6,7 @@ class GuestRepository {
 
     suspend fun getCouponList() = RetrofitInstance.api.getCouponList()
 
-    suspend fun postCouponCheck() = RetrofitInstance.api.postCouponCheck()
+    suspend fun postCouponCheck(
+        coupon: Float
+    ) = RetrofitInstance.api.postCouponCheck(coupon)
 }

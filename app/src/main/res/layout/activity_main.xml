@@ -40,10 +40,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnCheckCoupon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_700"
         android:text="Check"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,8 +60,30 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckCoupon"
         tools:listitem="@layout/guest_list_item" />
 
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:visibility="gone"
+        android:indeterminateTint="@color/purple_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/post_progress"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:elevation="10dp"
+        android:visibility="gone"
+        android:indeterminateTint="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCheckCoupon"
+        app:layout_constraintEnd_toEndOf="@+id/btnCheckCoupon"
+        app:layout_constraintStart_toStartOf="@+id/btnCheckCoupon"
+        app:layout_constraintTop_toTopOf="@+id/btnCheckCoupon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
