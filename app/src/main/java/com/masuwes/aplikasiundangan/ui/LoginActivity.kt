@@ -36,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
                     }
                     "Berhasil Login".showToast(this)
                     startActivity(Intent(this, MainActivity::class.java))
+                    finish()
                 }
                 is Resource.Loading -> {
                     binding.apply {

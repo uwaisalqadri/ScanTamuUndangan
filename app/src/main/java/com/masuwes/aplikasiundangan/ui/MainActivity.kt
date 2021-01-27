@@ -11,8 +11,8 @@ import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.database.*
 import com.google.zxing.integration.android.IntentIntegrator
+import com.masuwes.aplikasiundangan.R
 import com.masuwes.aplikasiundangan.data.GuestViewModel
 import com.masuwes.aplikasiundangan.databinding.ActivityMainBinding
 import com.masuwes.aplikasiundangan.utils.Resource
@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
                         when (result.success) {
                             true -> {
                                 viewModel.getCouponList()
-                                "Coupon Berhasil Dicek".showToast(this)
                                 "Kupon ${result.name} Berhasil Ditukarkan".showToast(this)
                             }
                             false -> {
@@ -138,9 +137,13 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when(item.itemId) {
-//            R.id.action
-//        }
-//    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.action_about -> {
+                startActivity(Intent(this, AboutActivity::class.java))
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
 }
