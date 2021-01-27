@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AB Wedding</string>
+    <string name="action_about">About</string>
 </resources>

@@ -9,4 +9,8 @@ class GuestRepository {
     suspend fun postCouponCheck(
         coupon: String
     ) = RetrofitInstance.api.postCouponCheck(coupon)
+
+    suspend fun login(
+        email: String
+    ) = RetrofitInstance.api.login(email)
 }
